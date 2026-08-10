@@ -75,9 +75,13 @@ Brick Layout
 The current level contains an 8 × 5 grid of bricks:
 
 R R R R R R R R
+
 O O O O O O O O
+
 Y Y Y Y Y Y Y Y
+
 G G G G G G G G
+
 B B B B B B B B
 
 Each row uses a different color:
