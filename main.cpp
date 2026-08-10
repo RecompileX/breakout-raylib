@@ -29,7 +29,7 @@ int main(){
 
         if(gameStarted == 0 && ball.lives > 0){
 
-            DrawText("Press enter to start ball.", 640, 720, 80, WHITE);
+            DrawText("Press Enter to Launch", 164, 400, 80, WHITE);
 
             if(IsKeyPressed(KEY_ENTER)){
 
