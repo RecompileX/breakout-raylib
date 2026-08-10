@@ -13,6 +13,7 @@ void Ball::update()
 
     if(y + radius >=GetScreenHeight()){
         lives--;
+        lifeLost = true;
         x = 640; 
         y = 400;
     }
@@ -33,4 +34,12 @@ void Ball::paddleBug(int paddleT1){
     }
     
     paddleT2 = time(0);
+}
+
+bool Ball::lostLife(){
+    
+    bool result = lifeLost;
+    lifeLost = false;
+    return result;
+    
 }

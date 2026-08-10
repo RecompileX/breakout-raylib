@@ -14,7 +14,8 @@ int main(){
     std::cout << "Starting the game." << std::endl;
     const int screenWidth = 1280;
     const int screenHeight = 800;
-    pad.x = 640;
+    int gameStarted = 0;
+    pad.x = 544;
     pad.y = 720;
     Color backgroundColour = { 25, 20, 60, 255 };
     
@@ -23,15 +24,30 @@ int main(){
 
     while(WindowShouldClose() == false){
 
-        ClearBackground(backgroundColour);
         BeginDrawing();
+        ClearBackground(backgroundColour);
+
+        if(gameStarted == 0 && ball.lives > 0){
+
+            DrawText("Press enter to start ball.", 640, 720, 80, WHITE);
+
+            if(IsKeyPressed(KEY_ENTER)){
+
+                gameStarted = 1;
+
+            }
+        }
+        if(ball.lostLife()){
+            gameStarted = 0;
+                pad.x = 544;
+        }
 
         if(CheckCollisionCircleRec(Vector2{ball.x, ball.y}, ball.radius, Rectangle{pad.x, pad.y, 192, 30})){
             ball.veloY *= -1;
             ball.paddleBug(time(0));
         }
 
-        if(ball.lives > 0){
+        if(ball.lives > 0 && gameStarted == 1){
             ball.update();
         
         for(int x = 0; x < 8; x++){
