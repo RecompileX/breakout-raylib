@@ -99,13 +99,21 @@ Blue
 Project Structure
 
 .
+
 ├── ball.cpp
+
 ├── ball.h
+
 ├── bricks.cpp
+
 ├── bricks.h
+
 ├── paddle.cpp
+
 ├── paddle.h
+
 ├── main.cpp
+
 └── .gitignore
 
 ball.cpp / ball.h
