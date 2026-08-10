@@ -1,167 +1,62 @@
 Breakout++
 
-Breakout++ is a small fan-made Breakout-style arcade game written in C++ using raylib.
-
-The goal is simple: move the paddle, keep the ball in play, and destroy the wall of bricks.
+A simple Breakout clone written in C++ with raylib.
 
 Disclaimer
 
-This project is an unofficial, fan-made clone inspired by the classic Breakout game.
+This is an unofficial fan-made project inspired by Atari's Breakout.
 
-I am not affiliated with, endorsed by, sponsored by, or associated with Atari in any way.Atari and Breakout are trademarks and/or properties of their respective owners.
+I am not affiliated with, endorsed by, sponsored by, or associated with Atari in any way.Atari and Breakout belong to their respective owners.
 
-This project was created for learning, programming practice, and non-commercial hobby use.
+Requirements
 
-Current Features
+C++ compiler
 
-C++ game code built with raylib
+raylib
 
-1280 × 800 game window
+Build
 
-60 FPS target
+Example with MinGW:
 
-Paddle movement with the left and right arrow keys
+g++ main.cpp ball.cpp bricks.cpp paddle.cpp -o breakout++ -lraylib -lopengl32 -lgdi32 -lwinmm
 
-Ball movement and wall bouncing
-
-Paddle collision
-
-Brick collision
-
-40 bricks arranged in an 8 × 5 grid
-
-Five colored brick rows
-
-3-life system
-
-Ball reset after losing a life
-
-Press Enter to launch after a life is lost
-
-Simple programmatically drawn graphics
+Depending on how raylib is installed on your system, your build command may be different.
 
 Controls
 
-Key
+Left Arrow — move paddle left
 
-Action
+Right Arrow — move paddle right
 
-Left Arrow
+Enter — launch the ball
 
-Move paddle left
+Project files
 
-Right Arrow
-
-Move paddle right
-
-Enter
-
-Launch / resume the ball
-
-Window close button
-
-Exit the game
-
-Gameplay
-
-When the game starts, press Enter to launch the ball.
-
-Use the paddle at the bottom of the screen to keep the ball from falling out of bounds. When the ball hits a visible brick, the brick disappears and the ball changes vertical direction.
-
-You begin with 3 lives. If the ball reaches the bottom of the screen, one life is removed and the ball is reset.
-
-Brick Layout
-
-The current level contains an 8 × 5 grid of bricks:
-
-R R R R R R R R
-
-O O O O O O O O
-
-Y Y Y Y Y Y Y Y
-
-G G G G G G G G
-
-B B B B B B B B
-
-Each row uses a different color:
-
-Red
-
-Orange
-
-Yellow
-
-Green
-
-Blue
-
-Project Structure
-
-.
-
-├── ball.cpp
-
-├── ball.h
-
-├── bricks.cpp
-
-├── bricks.h
-
-├── paddle.cpp
-
-├── paddle.h
-
-├── main.cpp
-
-└── .gitignore
-
-ball.cpp / ball.h
-
-Handles:
-
-Ball position
-
-Ball velocity
-
-Drawing
-
-Screen-edge collisions
-
-Lives
-
-Ball reset behavior
-
-Paddle collision workaround
-
-bricks.cpp / bricks.h
-
-Handles:
-
-Creating the brick grid
-
-Brick positions
-
-Brick visibility
-
-Brick colors
-
-Drawing bricks
-
-Detecting ball-to-brick collisions
-
-paddle.cpp / paddle.h
-
-Handles:
-
-Left/right keyboard input
-
-Paddle velocity
-
-Keeping the paddle on screen
-
-Drawing the paddle
-
+ball.cpp
+ball.h
+bricks.cpp
+bricks.h
+paddle.cpp
+paddle.h
 main.cpp
+.gitignore
 
-Contains the main game loop and connects the ball, paddle, and brick systems.
+Current implementation
+
+1280x800 window
+
+60 FPS target
+
+3 lives
+
+8x5 brick grid
+
+Ball/wall collision
+
+Ball/paddle collision
+
+Ball/brick collision
+
+Bricks disappear when hit
+
+Ball resets after a life is lost
