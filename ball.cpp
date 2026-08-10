@@ -29,7 +29,7 @@ void Ball::paddleBug(int paddleT1){
 
     if(paddleT1 == paddleT2){
 
-        x += 20;
+        y += 20;
     }
     
     paddleT2 = time(0);
